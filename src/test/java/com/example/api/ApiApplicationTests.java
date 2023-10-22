@@ -10,7 +10,6 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import static org.assertj.core.api.Assertions.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
@@ -47,6 +46,7 @@ class ApiApplicationTests {
 
         }
         latch.await();
+        Thread.sleep(10000);
 
         long count = couponRepository.count();
         assertThat(count).isEqualTo(100);
